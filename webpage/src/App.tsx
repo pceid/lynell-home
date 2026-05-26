@@ -175,7 +175,7 @@ const content = {
       eyebrow: 'Romoversikt',
       title: 'Hele hjemmet samlet i ett rolig bilde.',
       text: 'Lynell skal gi oversikt uten å gjøre hjemmet teknisk. Rom, komfort, lys, energi og status samles i et visuelt grensesnitt som er lett å forstå – også for de som ikke ønsker å tenke på systemet bak.',
-      nivaStatus: 'NIVA følger med',
+      nivaStatus: 'Alt ser bra ut. Hjemmet er i balanse.',
       rooms: [
         { title: 'Stue', text: '21.5° · Lys 42% · På mål', icon: 'heart' },
         { title: 'Kjøkken', text: '20.8° · Rolig scene', icon: 'rhythm' },
@@ -357,7 +357,7 @@ const content = {
       eyebrow: 'Room overview',
       title: 'The whole home gathered in one calm picture.',
       text: 'Lynell should provide overview without making the home feel technical. Rooms, comfort, light, energy and status are gathered in a visual interface that is easy to understand, even for people who do not want to think about the system behind it.',
-      nivaStatus: 'NIVA is watching',
+      nivaStatus: 'Everything looks good. The home is in balance.',
       rooms: [
         { title: 'Living', text: '21.5° · Light 42% · On target', icon: 'heart' },
         { title: 'Kitchen', text: '20.8° · Calm scene', icon: 'rhythm' },
@@ -582,14 +582,22 @@ function OperatingHomeMockup({
   return (
     <div className="homeSceneMockup" aria-label={sceneLabel}>
       <div className="architectureFrame">
+        <div className="nightSky">
+          <span />
+          <span />
+          <span />
+        </div>
         <div className="windowWall">
           {Array.from({ length: 9 }, (_, index) => (
             <span key={index} />
           ))}
         </div>
         <div className="ceilingLine" />
+        <div className="stoneWall" />
+        <div className="woodWall" />
         <div className="floorPlane" />
       </div>
+      <div className="fireplaceGlow" />
       <div className="warmLightPool lightPoolOne" />
       <div className="warmLightPool lightPoolTwo" />
       <div className="floorLamp">
@@ -600,6 +608,12 @@ function OperatingHomeMockup({
       <div className="loungeSofa" />
       <div className="lowTable" />
       <div className="kitchenIsland" />
+      <div className="diningSet">
+        <span />
+        <span />
+        <span />
+      </div>
+      <div className="textileRug" />
       <div className="sofaShape" />
       <div className="slatWall">
         {Array.from({ length: 11 }, (_, index) => (
@@ -639,6 +653,7 @@ function NivaUseMockup({
         <span />
       </div>
       <div className="ambientWindow" />
+      <div className="nivaEveningLight" />
       <div className="personScene">
         <div className="personHead" />
         <div className="personBody" />
@@ -647,6 +662,7 @@ function NivaUseMockup({
       </div>
       <div className="contextSofa" />
       <div className="contextLamp" />
+      <div className="sideTable" />
       <div className="tabletFrame">
         <div className="dialogStack">
           <div className="dialogBubble userBubble">
@@ -685,7 +701,11 @@ function RoomOverviewMockup({ rooms, nivaStatus }: { rooms: Card[]; nivaStatus: 
       <div className="roomGrid">
         {rooms.map((room) => (
           <article className="roomTile" key={room.title}>
-            <Icon name={room.icon} />
+            <div className="roomVisual">
+              <span />
+              <span />
+              <span />
+            </div>
             <div>
               <h3>{room.title}</h3>
               <p>{room.text}</p>
