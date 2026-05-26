@@ -857,6 +857,366 @@ h4 {
   height: 22px;
 }
 
+/* Cinematic scenario visuals */
+.homeSceneMockup {
+  min-height: clamp(520px, 52vw, 720px);
+  border-color: rgba(237, 248, 244, 0.12);
+  background:
+    radial-gradient(circle at 18% 72%, rgba(255, 198, 128, 0.2), transparent 18rem),
+    radial-gradient(circle at 76% 28%, rgba(124, 232, 199, 0.12), transparent 22rem),
+    linear-gradient(135deg, #091713, #07110f 62%, #111c18);
+}
+
+.homeSceneMockup::before {
+  background:
+    linear-gradient(180deg, rgba(5, 12, 10, 0.1), rgba(5, 12, 10, 0.78)),
+    radial-gradient(circle at 28% 60%, rgba(255, 211, 148, 0.18), transparent 18rem);
+}
+
+.architectureFrame {
+  position: absolute;
+  inset: 0;
+}
+
+.windowWall {
+  position: absolute;
+  inset: 42px 48px auto auto;
+  width: min(420px, 52%);
+  height: 58%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid rgba(237, 248, 244, 0.08);
+  background: linear-gradient(180deg, rgba(168, 244, 220, 0.07), rgba(6, 17, 15, 0.36));
+}
+
+.windowWall span {
+  border: 1px solid rgba(168, 244, 220, 0.1);
+  background:
+    linear-gradient(180deg, rgba(168, 244, 220, 0.11), rgba(168, 244, 220, 0.025)),
+    rgba(255, 255, 255, 0.018);
+}
+
+.ceilingLine {
+  position: absolute;
+  left: 44px;
+  right: 44px;
+  top: 86px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(237, 248, 244, 0.18), transparent);
+}
+
+.floorPlane {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 42%;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.016), rgba(255, 255, 255, 0.055));
+  clip-path: polygon(0 30%, 100% 8%, 100% 100%, 0 100%);
+}
+
+.warmLightPool {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(18px);
+  background: rgba(255, 197, 116, 0.16);
+}
+
+.lightPoolOne {
+  left: 68px;
+  bottom: 132px;
+  width: 230px;
+  height: 120px;
+}
+
+.lightPoolTwo {
+  right: 176px;
+  bottom: 126px;
+  width: 210px;
+  height: 96px;
+}
+
+.floorLamp {
+  position: absolute;
+  left: 70px;
+  top: 142px;
+  width: 78px;
+  height: 210px;
+}
+
+.floorLamp span {
+  position: absolute;
+  left: 31px;
+  top: 62px;
+  width: 2px;
+  height: 132px;
+  background: rgba(237, 248, 244, 0.22);
+}
+
+.floorLamp i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 219, 151, 0.7), rgba(255, 219, 151, 0.1) 58%, transparent 70%);
+  border: 1px solid rgba(255, 219, 151, 0.18);
+}
+
+.diningPendant {
+  position: absolute;
+  left: 43%;
+  top: 94px;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 216, 151, 0.54), rgba(255, 216, 151, 0.09) 56%, transparent 72%);
+  border: 1px solid rgba(255, 216, 151, 0.12);
+}
+
+.loungeSofa,
+.lowTable,
+.kitchenIsland {
+  position: absolute;
+  border: 1px solid rgba(237, 248, 244, 0.1);
+  background: linear-gradient(145deg, rgba(237, 248, 244, 0.1), rgba(237, 248, 244, 0.035));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+}
+
+.loungeSofa {
+  right: 112px;
+  bottom: 128px;
+  width: min(310px, 38%);
+  height: 118px;
+  border-radius: 18px 18px 8px 8px;
+}
+
+.lowTable {
+  right: 210px;
+  bottom: 88px;
+  width: 180px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgba(237, 248, 244, 0.065);
+}
+
+.kitchenIsland {
+  left: 122px;
+  bottom: 132px;
+  width: min(280px, 35%);
+  height: 82px;
+  border-radius: 8px;
+}
+
+.homeSceneMockup .sofaShape,
+.homeSceneMockup .counterShape,
+.homeSceneMockup .homeWindow,
+.homeSceneMockup .roomPlane,
+.homeSceneMockup .pendantLights {
+  display: none;
+}
+
+.homeSceneMockup .slatWall {
+  right: 54px;
+  top: 64px;
+  height: 54%;
+  opacity: 0.82;
+}
+
+.homeSceneMockup .slatWall span {
+  width: 7px;
+  background: rgba(237, 248, 244, 0.08);
+}
+
+.sceneOverlay {
+  left: 34px;
+  bottom: 34px;
+  width: auto;
+  max-width: min(560px, calc(100% - 68px));
+  background: rgba(6, 17, 15, 0.42);
+  border-color: rgba(237, 248, 244, 0.13);
+}
+
+.sceneStatus {
+  gap: 10px;
+}
+
+.sceneStatus span {
+  border-color: rgba(168, 244, 220, 0.16);
+  background: rgba(237, 248, 244, 0.045);
+}
+
+.nivaUseMockup {
+  min-height: clamp(520px, 50vw, 690px);
+  background:
+    radial-gradient(circle at 18% 28%, rgba(255, 213, 154, 0.18), transparent 16rem),
+    radial-gradient(circle at 84% 20%, rgba(124, 232, 199, 0.1), transparent 19rem),
+    linear-gradient(145deg, #0a1714, #06110f 68%, #13211c);
+}
+
+.homeBackdrop {
+  background:
+    linear-gradient(180deg, rgba(6, 17, 15, 0), rgba(6, 17, 15, 0.68)),
+    radial-gradient(circle at 28% 32%, rgba(255, 213, 154, 0.11), transparent 18rem);
+}
+
+.ambientWindow {
+  position: absolute;
+  right: 48px;
+  top: 42px;
+  width: min(360px, 48%);
+  height: 46%;
+  border: 1px solid rgba(237, 248, 244, 0.08);
+  background: linear-gradient(180deg, rgba(168, 244, 220, 0.08), rgba(6, 17, 15, 0.38));
+}
+
+.ambientWindow::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: repeating-linear-gradient(90deg, transparent 0 38px, rgba(237, 248, 244, 0.08) 39px 40px);
+}
+
+.personScene {
+  position: absolute;
+  left: 78px;
+  bottom: 94px;
+  width: 280px;
+  height: 310px;
+}
+
+.personHead {
+  position: absolute;
+  left: 112px;
+  top: 18px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(237, 248, 244, 0.2), rgba(237, 248, 244, 0.08));
+}
+
+.personBody {
+  position: absolute;
+  left: 78px;
+  top: 82px;
+  width: 142px;
+  height: 158px;
+  border-radius: 70px 70px 32px 32px;
+  background: linear-gradient(145deg, rgba(237, 248, 244, 0.17), rgba(237, 248, 244, 0.045));
+  transform: rotate(-5deg);
+}
+
+.personArm {
+  position: absolute;
+  left: 118px;
+  top: 172px;
+  width: 120px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(237, 248, 244, 0.13);
+  transform: rotate(14deg);
+}
+
+.lapTablet {
+  position: absolute;
+  left: 150px;
+  top: 198px;
+  width: 106px;
+  height: 70px;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(124, 232, 199, 0.2), transparent 4rem),
+    #071410;
+  border: 1px solid rgba(168, 244, 220, 0.22);
+  transform: rotate(10deg);
+}
+
+.contextSofa {
+  position: absolute;
+  left: 46px;
+  bottom: 64px;
+  width: min(420px, 58%);
+  height: 112px;
+  border-radius: 26px 26px 10px 10px;
+  border: 1px solid rgba(237, 248, 244, 0.09);
+  background: linear-gradient(145deg, rgba(237, 248, 244, 0.11), rgba(237, 248, 244, 0.035));
+}
+
+.contextLamp {
+  position: absolute;
+  right: 86px;
+  bottom: 96px;
+  width: 90px;
+  height: 240px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 18%, rgba(255, 213, 143, 0.36), transparent 34%);
+}
+
+.nivaUseMockup .handShape,
+.nivaUseMockup .tabletTopBar {
+  display: none;
+}
+
+.nivaUseMockup .tabletFrame {
+  left: auto;
+  right: 44px;
+  top: auto;
+  bottom: 48px;
+  width: min(390px, 46%);
+  min-height: auto;
+  transform: none;
+  border-radius: 8px;
+  padding: 18px;
+  background: rgba(6, 17, 15, 0.52);
+  backdrop-filter: blur(18px);
+}
+
+.nivaUseMockup .dialogStack {
+  margin-top: 0;
+}
+
+.nivaUseMockup .dialogBubble {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(237, 248, 244, 0.12);
+}
+
+.nivaUseMockup .nivaBubble {
+  background: rgba(124, 232, 199, 0.065);
+}
+
+.roomOverviewMockup {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(124, 232, 199, 0.09), transparent 18rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.018)),
+    rgba(8, 24, 21, 0.7);
+}
+
+.roomGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.roomTile {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.022)),
+    rgba(6, 17, 15, 0.32);
+}
+
+.roomTile p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
 .niva {
   background:
     radial-gradient(circle at 80% 18%, rgba(124, 232, 199, 0.14), transparent 26rem),

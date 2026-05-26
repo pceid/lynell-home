@@ -72,7 +72,7 @@ const content = {
       text: 'Lynell samler lys, klima, solskjerming, media og energi i én opplevelse. Resultatet er ikke mer teknologi i hverdagen – men et hjem som føles mer balansert, mer forståelig og enklere å leve i.',
       sceneLabel: 'Rolig kveldsscene aktiv',
       dataPoints: ['Komfort', 'Lys', 'Solskjerming', 'Energi'],
-      statusItems: ['Lys 42%', 'Solskjerming justert', 'Komfort balansert'],
+      statusItems: ['Komfort balansert', 'Rolig kveldsscene', 'Lys tilpasset', 'Solskjerming aktiv'],
     },
     niva: {
       eyebrow: 'NIVA',
@@ -254,7 +254,7 @@ const content = {
       text: 'Lynell brings lighting, climate, shading, media and energy into one experience. The result is not more technology in daily life, but a home that feels more balanced, more understandable and easier to live in.',
       sceneLabel: 'Calm evening scene active',
       dataPoints: ['Comfort', 'Light', 'Shading', 'Energy'],
-      statusItems: ['Light 42%', 'Shading adjusted', 'Comfort balanced'],
+      statusItems: ['Comfort balanced', 'Calm evening scene', 'Light adapted', 'Shading active'],
     },
     niva: {
       eyebrow: 'NIVA',
@@ -574,32 +574,35 @@ function Icon({ name }: { name?: IconName }) {
 
 function OperatingHomeMockup({
   sceneLabel,
-  dataPoints,
   statusItems,
 }: {
   sceneLabel: string;
-  dataPoints: string[];
   statusItems: string[];
 }) {
   return (
     <div className="homeSceneMockup" aria-label={sceneLabel}>
-      <div className="homeWindow">
-        <span />
-        <span />
-        <span />
-        <span />
+      <div className="architectureFrame">
+        <div className="windowWall">
+          {Array.from({ length: 9 }, (_, index) => (
+            <span key={index} />
+          ))}
+        </div>
+        <div className="ceilingLine" />
+        <div className="floorPlane" />
       </div>
-      <div className="roomPlane kitchenPlane" />
-      <div className="roomPlane livingPlane" />
-      <div className="pendantLights">
+      <div className="warmLightPool lightPoolOne" />
+      <div className="warmLightPool lightPoolTwo" />
+      <div className="floorLamp">
         <span />
-        <span />
-        <span />
+        <i />
       </div>
+      <div className="diningPendant" />
+      <div className="loungeSofa" />
+      <div className="lowTable" />
+      <div className="kitchenIsland" />
       <div className="sofaShape" />
-      <div className="counterShape" />
       <div className="slatWall">
-        {Array.from({ length: 8 }, (_, index) => (
+        {Array.from({ length: 11 }, (_, index) => (
           <span key={index} />
         ))}
       </div>
@@ -610,11 +613,6 @@ function OperatingHomeMockup({
             <span key={item}>{item}</span>
           ))}
         </div>
-      </div>
-      <div className="sceneDataPoints">
-        {dataPoints.map((point) => (
-          <span key={point}>{point}</span>
-        ))}
       </div>
     </div>
   );
@@ -640,12 +638,16 @@ function NivaUseMockup({
         <span />
         <span />
       </div>
-      <div className="handShape" />
+      <div className="ambientWindow" />
+      <div className="personScene">
+        <div className="personHead" />
+        <div className="personBody" />
+        <div className="personArm" />
+        <div className="lapTablet" />
+      </div>
+      <div className="contextSofa" />
+      <div className="contextLamp" />
       <div className="tabletFrame">
-        <div className="tabletTopBar">
-          <span>Lynell</span>
-          <i />
-        </div>
         <div className="dialogStack">
           <div className="dialogBubble userBubble">
             <small>{userLabel}</small>
@@ -684,8 +686,10 @@ function RoomOverviewMockup({ rooms, nivaStatus }: { rooms: Card[]; nivaStatus: 
         {rooms.map((room) => (
           <article className="roomTile" key={room.title}>
             <Icon name={room.icon} />
-            <h3>{room.title}</h3>
-            <p>{room.text}</p>
+            <div>
+              <h3>{room.title}</h3>
+              <p>{room.text}</p>
+            </div>
           </article>
         ))}
       </div>
@@ -783,7 +787,6 @@ export function App() {
           </div>
           <OperatingHomeMockup
             sceneLabel={page.operatingHome.sceneLabel}
-            dataPoints={page.operatingHome.dataPoints}
             statusItems={page.operatingHome.statusItems}
           />
         </div>
