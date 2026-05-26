@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Lynell">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#17211f" />
+      <stop offset="1" stop-color="#0b0f0e" />
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f1d19b" />
+      <stop offset="1" stop-color="#5fd3be" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#bg)" />
+  <path
+    d="M146 326V176h42v111h70v39H146Zm126 0V176h42v111h68v39H272Z"
+    fill="#f4efe7"
+    opacity="0.92"
+  />
+  <path d="M134 374h244" stroke="url(#line)" stroke-width="18" stroke-linecap="round" />
+</svg>

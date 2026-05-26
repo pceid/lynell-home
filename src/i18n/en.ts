@@ -1,0 +1,58 @@
+export const en = {
+  language: {
+    label: 'Language',
+    norwegian: 'Norwegian',
+    english: 'English',
+    helper: 'Language is stored in server-owned SystemConfig and used by UI and NIVA system text.',
+    saved: 'English',
+  },
+  nav: {
+    home: 'Home',
+    rooms: 'Rooms',
+    lights: 'Lights',
+    climate: 'Climate',
+    shading: 'Shading',
+    camera: 'Camera',
+    media: 'Media',
+    assistants: 'Assistants',
+    calendar: 'Calendar',
+    manager: 'Manager',
+  },
+  common: {
+    saveChanges: 'Save changes',
+    discardChanges: 'Discard changes',
+    saved: 'Saved',
+    unsavedChanges: 'Unsaved changes',
+    live: 'Live',
+    stale: 'Stale',
+    offline: 'Offline',
+    connected: 'Connected',
+    disconnected: 'Disconnected',
+    enabled: 'On',
+    disabled: 'Off',
+  },
+  niva: {
+    welcome: 'I am watching the house and can help with calendar, scenes, climate and lights over time.',
+    identity:
+      'I am NIVA, Lynell’s local system layer. I observe the home, explain what is happening and suggest safe actions when you ask.',
+    unknown: 'I do not have a good answer for that yet, but I have noted the signal.',
+    saferActionInfo:
+      'I understand the request, but need a little clearer information before I can prepare a safe proposal.',
+    mqttRetained:
+      'Retained MQTT messages are last-known broker state. They are useful, but not treated as fresh live signals until a new topic update arrives.',
+  },
+  mqtt: {
+    title: 'MQTT runtime trust',
+    broker: 'Broker',
+    runtimeMode: 'Runtime mode',
+    topicRoot: 'Topic root',
+    lastMessage: 'Latest message',
+    topicTrust: 'Topic trust',
+    liveTopics: 'live topics',
+    retainedOnly: 'retained-only',
+    staleTopics: 'stale topics',
+    noMessages: 'No MQTT messages received yet.',
+    connectedButStale: 'MQTT is connected, but some topics have not updated recently.',
+    retainedWarning: 'Retained payload is last-known state, not fresh live data.',
+  },
+} as const

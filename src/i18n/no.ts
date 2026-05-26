@@ -1,0 +1,58 @@
+export const no = {
+  language: {
+    label: 'Språk',
+    norwegian: 'Norsk',
+    english: 'Engelsk',
+    helper: 'Språk lagres i server-eid SystemConfig og brukes av UI og NIVA-systemtekst.',
+    saved: 'Norsk',
+  },
+  nav: {
+    home: 'Hjem',
+    rooms: 'Rom',
+    lights: 'Lys',
+    climate: 'Klima',
+    shading: 'Solskjerming',
+    camera: 'Kamera',
+    media: 'Media',
+    assistants: 'Assistenter',
+    calendar: 'Kalender',
+    manager: 'Manager',
+  },
+  common: {
+    saveChanges: 'Lagre endringer',
+    discardChanges: 'Forkast endringer',
+    saved: 'Lagret',
+    unsavedChanges: 'Ulagrede endringer',
+    live: 'Live',
+    stale: 'Stale',
+    offline: 'Offline',
+    connected: 'Tilkoblet',
+    disconnected: 'Ikke koblet',
+    enabled: 'På',
+    disabled: 'Av',
+  },
+  niva: {
+    welcome: 'Jeg følger med på huset og kan etter hvert hjelpe med kalender, scener, klima og lys.',
+    identity:
+      'Jeg er NIVA, Lynell sitt lokale systemlag. Jeg følger med på hjemmets tilstand, forklarer hva som skjer og foreslår trygge handlinger når du ber om det.',
+    unknown: 'Det har jeg ikke lært å svare godt på ennå, men jeg har notert signalet.',
+    saferActionInfo:
+      'Jeg forstår ønsket, men trenger litt tydeligere informasjon før jeg kan lage et trygt forslag.',
+    mqttRetained:
+      'Retained MQTT-meldinger er siste kjente broker-state. De vises som nyttige, men ikke som ferske live-signaler før et nytt topic kommer inn.',
+  },
+  mqtt: {
+    title: 'MQTT runtime trust',
+    broker: 'Broker',
+    runtimeMode: 'Runtime mode',
+    topicRoot: 'Topic root',
+    lastMessage: 'Siste melding',
+    topicTrust: 'Topic trust',
+    liveTopics: 'live topics',
+    retainedOnly: 'retained-only',
+    staleTopics: 'stale topics',
+    noMessages: 'Ingen MQTT-meldinger mottatt ennå.',
+    connectedButStale: 'MQTT er tilkoblet, men noen topics har ikke oppdatert nylig.',
+    retainedWarning: 'Retained payload er sist kjente state, ikke fersk live data.',
+  },
+} as const

@@ -1,0 +1,24 @@
+Lynell / NIVA Audio System
+========================================
+
+Denne strukturen er laget for:
+- Adaptive lydprofiler
+- Romtilpasset lyd
+- Premium UI-feedback
+- Fremtidige AI-genererte lydpakker
+- Runtime-optimalisering
+- Systemlyder for app, touchpanel og hardware
+
+Hovedprinsipp:
+- master/ = originale WAV-filer
+- runtime/ = optimaliserte filer brukt i systemet
+- profiles/ = forskjellige lydprofiler
+- rooms/ = romspesifikke lydvarianter
+- generated/ = AI-genererte råfiler
+
+Anbefalt workflow:
+1. Generer lydidéer i Suno
+2. Lagre råfiler i generated/
+3. Rediger og master i DAW
+4. Eksporter til master/
+5. Optimaliser runtime-filer til runtime/

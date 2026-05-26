@@ -1,0 +1,19 @@
+{
+  "name": "Lynell",
+  "short_name": "Lynell",
+  "description": "Lynell Home",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f1312",
+  "theme_color": "#0f1312",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/lynell-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
