@@ -331,6 +331,7 @@ h1 {
 
 .intro,
 .experience,
+.scenarioSection,
 .niva,
 .design,
 .foundation,
@@ -361,7 +362,9 @@ h1 {
 .nivaNameGrid > *,
 .nivaCapabilityGrid > *,
 .featureGrid > *,
-.cardGrid > * {
+.cardGrid > *,
+.scenarioLayout > *,
+.roomGrid > * {
   min-width: 0;
 }
 
@@ -436,6 +439,422 @@ h4 {
 
 .cardGrid.three {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.scenarioSection {
+  background:
+    radial-gradient(circle at 78% 26%, rgba(124, 232, 199, 0.1), transparent 28rem),
+    rgba(255, 255, 255, 0.018);
+}
+
+.nivaUseSection {
+  background:
+    radial-gradient(circle at 16% 24%, rgba(124, 232, 199, 0.09), transparent 26rem),
+    rgba(255, 255, 255, 0.012);
+}
+
+.roomOverviewSection {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(124, 232, 199, 0.11), transparent 28rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018), rgba(255, 255, 255, 0.03));
+}
+
+.scenarioLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(48px, 7vw, 104px);
+  align-items: center;
+}
+
+.scenarioLayout.reverse {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+}
+
+.scenarioCopy {
+  max-width: 560px;
+}
+
+.scenarioCopy p:not(.sectionLabel) {
+  margin-top: 24px;
+  color: rgba(237, 248, 244, 0.72);
+  font-size: clamp(1.08rem, 1.18vw, 1.22rem);
+  line-height: 1.86;
+}
+
+.homeSceneMockup,
+.nivaUseMockup,
+.roomOverviewMockup {
+  position: relative;
+  min-height: clamp(420px, 44vw, 560px);
+  border: 1px solid rgba(186, 229, 214, 0.18);
+  border-radius: 8px;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    rgba(8, 26, 22, 0.66);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 34px 100px rgba(0, 0, 0, 0.22);
+}
+
+.homeSceneMockup {
+  isolation: isolate;
+}
+
+.homeSceneMockup::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    radial-gradient(circle at 22% 72%, rgba(255, 197, 124, 0.18), transparent 12rem),
+    radial-gradient(circle at 76% 24%, rgba(168, 244, 220, 0.18), transparent 18rem),
+    linear-gradient(180deg, rgba(6, 17, 15, 0.08), rgba(6, 17, 15, 0.76));
+  z-index: -1;
+}
+
+.homeWindow {
+  position: absolute;
+  inset: 42px 44px auto auto;
+  width: 34%;
+  height: 42%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  transform: perspective(700px) rotateY(-12deg);
+}
+
+.homeWindow span {
+  border-radius: 3px;
+  background: linear-gradient(180deg, rgba(168, 244, 220, 0.22), rgba(168, 244, 220, 0.04));
+  border: 1px solid rgba(168, 244, 220, 0.14);
+}
+
+.roomPlane {
+  position: absolute;
+  bottom: 70px;
+  height: 34%;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012));
+}
+
+.kitchenPlane {
+  left: 42px;
+  width: 38%;
+  transform: skewY(-8deg);
+}
+
+.livingPlane {
+  right: 42px;
+  width: 44%;
+  transform: skewY(7deg);
+}
+
+.pendantLights {
+  position: absolute;
+  left: 74px;
+  top: 60px;
+  display: flex;
+  gap: 28px;
+}
+
+.pendantLights span {
+  width: 34px;
+  height: 54px;
+  border-radius: 0 0 18px 18px;
+  background: radial-gradient(circle at 50% 82%, rgba(255, 220, 150, 0.7), rgba(255, 220, 150, 0.1) 58%, transparent 70%);
+  border: 1px solid rgba(255, 220, 150, 0.18);
+}
+
+.sofaShape,
+.counterShape {
+  position: absolute;
+  border-radius: 8px;
+  background: rgba(237, 248, 244, 0.08);
+  border: 1px solid rgba(237, 248, 244, 0.12);
+}
+
+.sofaShape {
+  right: 72px;
+  bottom: 110px;
+  width: 190px;
+  height: 72px;
+}
+
+.counterShape {
+  left: 70px;
+  bottom: 120px;
+  width: 210px;
+  height: 54px;
+}
+
+.slatWall {
+  position: absolute;
+  right: 58px;
+  top: 64px;
+  height: 56%;
+  display: flex;
+  gap: 9px;
+}
+
+.slatWall span {
+  width: 10px;
+  border-radius: 999px;
+  background: rgba(168, 244, 220, 0.1);
+  border: 1px solid rgba(168, 244, 220, 0.08);
+}
+
+.sceneOverlay {
+  position: absolute;
+  left: 34px;
+  bottom: 34px;
+  width: min(330px, calc(100% - 68px));
+  border: 1px solid rgba(168, 244, 220, 0.22);
+  border-radius: 8px;
+  padding: 20px;
+  background: rgba(6, 17, 15, 0.66);
+  backdrop-filter: blur(16px);
+}
+
+.sceneOverlay p {
+  color: var(--ice-100);
+  font-weight: 760;
+}
+
+.sceneStatus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.sceneStatus span,
+.sceneDataPoints span {
+  border: 1px solid rgba(168, 244, 220, 0.2);
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: rgba(237, 248, 244, 0.72);
+  font-size: 0.78rem;
+}
+
+.sceneDataPoints {
+  position: absolute;
+  right: 32px;
+  bottom: 34px;
+  display: grid;
+  gap: 8px;
+}
+
+.nivaUseMockup {
+  min-height: clamp(430px, 42vw, 540px);
+}
+
+.homeBackdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 212, 143, 0.14), transparent 12rem),
+    radial-gradient(circle at 82% 20%, rgba(124, 232, 199, 0.12), transparent 16rem);
+}
+
+.homeBackdrop span {
+  position: absolute;
+  border: 1px solid rgba(237, 248, 244, 0.08);
+  background: rgba(237, 248, 244, 0.035);
+}
+
+.homeBackdrop span:nth-child(1) {
+  left: 44px;
+  top: 64px;
+  width: 120px;
+  height: 180px;
+}
+
+.homeBackdrop span:nth-child(2) {
+  right: 54px;
+  top: 72px;
+  width: 190px;
+  height: 120px;
+}
+
+.homeBackdrop span:nth-child(3) {
+  left: 74px;
+  bottom: 70px;
+  width: 220px;
+  height: 70px;
+}
+
+.handShape {
+  position: absolute;
+  right: 52px;
+  bottom: -42px;
+  width: 210px;
+  height: 120px;
+  border-radius: 80px 80px 0 0;
+  background: linear-gradient(180deg, rgba(237, 248, 244, 0.11), rgba(237, 248, 244, 0.03));
+  transform: rotate(-7deg);
+}
+
+.tabletFrame {
+  position: absolute;
+  inset: 46px auto 46px 50%;
+  width: min(390px, 46%);
+  transform: translateX(-50%) perspective(900px) rotateY(-8deg) rotateX(2deg);
+  border: 1px solid rgba(168, 244, 220, 0.24);
+  border-radius: 18px;
+  padding: 18px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    #071410;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+}
+
+.tabletTopBar,
+.overviewTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(237, 248, 244, 0.76);
+  font-size: 0.82rem;
+}
+
+.tabletTopBar i {
+  width: 42px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(168, 244, 220, 0.24);
+}
+
+.dialogStack {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.dialogBubble {
+  border-radius: 8px;
+  padding: 18px;
+  border: 1px solid rgba(168, 244, 220, 0.16);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.dialogBubble small {
+  color: var(--mint-300);
+  font-weight: 760;
+}
+
+.dialogBubble p {
+  margin-top: 8px;
+  color: rgba(237, 248, 244, 0.82);
+  font-size: 0.98rem;
+  line-height: 1.62;
+}
+
+.userBubble {
+  width: 82%;
+  margin-left: auto;
+}
+
+.nivaBubble {
+  background: rgba(124, 232, 199, 0.07);
+}
+
+.roomOverviewMockup {
+  min-height: auto;
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.overviewTop {
+  margin-bottom: 24px;
+}
+
+.overviewTop span {
+  display: block;
+  color: var(--mint-300);
+  font-size: 0.76rem;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.overviewTop strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--ice-100);
+  font-size: 1.1rem;
+}
+
+.overviewSignal {
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+}
+
+.overviewSignal i {
+  width: 6px;
+  border-radius: 999px;
+  background: var(--mint-300);
+}
+
+.overviewSignal i:nth-child(1) {
+  height: 12px;
+  opacity: 0.44;
+}
+
+.overviewSignal i:nth-child(2) {
+  height: 18px;
+  opacity: 0.66;
+}
+
+.overviewSignal i:nth-child(3) {
+  height: 26px;
+}
+
+.roomGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.roomTile {
+  min-height: 158px;
+  border: 1px solid rgba(168, 244, 220, 0.16);
+  border-radius: 8px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.042);
+}
+
+.roomTile .lineIcon {
+  width: 26px;
+  height: 26px;
+}
+
+.roomTile h3 {
+  margin-top: 16px;
+  font-size: 1.02rem;
+}
+
+.roomTile p {
+  margin-top: 8px;
+  color: rgba(237, 248, 244, 0.62);
+  font-size: 0.88rem;
+  line-height: 1.58;
+}
+
+.nivaDock {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  border: 1px solid rgba(168, 244, 220, 0.2);
+  border-radius: 999px;
+  padding: 10px 14px;
+  color: rgba(237, 248, 244, 0.76);
+  background: rgba(6, 17, 15, 0.42);
+}
+
+.nivaDock .lineIcon {
+  width: 22px;
+  height: 22px;
 }
 
 .niva {
@@ -807,7 +1226,9 @@ h4 {
   .splitPanel,
   .trustLayout,
   .foundationGrid,
-  .nivaHero {
+  .nivaHero,
+  .scenarioLayout,
+  .scenarioLayout.reverse {
     grid-template-columns: 1fr;
   }
 
@@ -825,6 +1246,24 @@ h4 {
 
   .nivaNameGrid,
   .nivaCapabilityGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tabletFrame {
+    inset: 48px 32px 48px 32px;
+    width: auto;
+    transform: none;
+  }
+
+  .sceneDataPoints {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 34px 34px;
+    margin-top: 360px;
+  }
+
+  .roomGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -887,6 +1326,7 @@ h4 {
 
   .intro,
   .experience,
+  .scenarioSection,
   .niva,
   .design,
   .foundation,
@@ -904,7 +1344,8 @@ h4 {
   }
 
   .nivaNameGrid,
-  .nivaCapabilityGrid {
+  .nivaCapabilityGrid,
+  .roomGrid {
     grid-template-columns: 1fr;
   }
 
@@ -916,5 +1357,61 @@ h4 {
   .featureCard {
     min-height: 250px;
     padding: 26px;
+  }
+
+  .homeSceneMockup,
+  .nivaUseMockup {
+    min-height: 560px;
+  }
+
+  .homeWindow {
+    inset: 32px 24px auto auto;
+    width: 42%;
+    height: 28%;
+  }
+
+  .pendantLights {
+    left: 34px;
+    top: 48px;
+    gap: 16px;
+  }
+
+  .counterShape {
+    left: 34px;
+    width: 150px;
+  }
+
+  .sofaShape {
+    right: 30px;
+    width: 150px;
+  }
+
+  .sceneOverlay {
+    left: 20px;
+    right: 20px;
+    bottom: 24px;
+    width: auto;
+  }
+
+  .sceneDataPoints {
+    padding: 0 20px 24px;
+    margin-top: 350px;
+  }
+
+  .tabletFrame {
+    inset: 34px 18px 34px 18px;
+    padding: 14px;
+  }
+
+  .dialogBubble {
+    padding: 14px;
+  }
+
+  .userBubble {
+    width: 92%;
+  }
+
+  .roomOverviewMockup {
+    padding: 18px;
   }
 }

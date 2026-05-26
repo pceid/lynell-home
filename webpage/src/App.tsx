@@ -66,6 +66,14 @@ const content = {
         },
       ],
     },
+    operatingHome: {
+      eyebrow: 'Hjemmet i drift',
+      title: 'Et hjem som responderer rolig på rytmen i hverdagen.',
+      text: 'Lynell samler lys, klima, solskjerming, media og energi i én opplevelse. Resultatet er ikke mer teknologi i hverdagen – men et hjem som føles mer balansert, mer forståelig og enklere å leve i.',
+      sceneLabel: 'Rolig kveldsscene aktiv',
+      dataPoints: ['Komfort', 'Lys', 'Solskjerming', 'Energi'],
+      statusItems: ['Lys 42%', 'Solskjerming justert', 'Komfort balansert'],
+    },
     niva: {
       eyebrow: 'NIVA',
       title: 'NIVA – intelligensen som gjør hjemmet forståelig.',
@@ -130,6 +138,17 @@ const content = {
       quote: '“Stuen varmes raskere enn forventet. Soltilskudd er sannsynlig, og vestvendt solskjerming er fortsatt åpen.”',
       tags: ['92% sikkerhet', 'høy tillit', 'forslag – ikke handling'],
     },
+    nivaInUse: {
+      eyebrow: 'NIVA i bruk',
+      title: 'Spør hjemmet – få et forståelig svar.',
+      text: 'NIVA skal gjøre avansert boligstyring mer menneskelig. I stedet for å lete i menyer kan brukeren spørre hva som skjer, hvorfor noe endret seg, eller hva som bør justeres.',
+      userLabel: 'Bruker',
+      nivaLabel: 'NIVA',
+      userMessage: '“NIVA, hvorfor er det varmt i stuen?”',
+      nivaMessage:
+        '“Vestvendt solskjerming er fortsatt åpen, og rommet får høyt soltilskudd. Jeg anbefaler å senke lamellene før temperaturen stiger mer.”',
+      tags: ['høy tillit', 'forklarbart', 'forslag – ikke handling'],
+    },
     design: {
       eyebrow: 'Design',
       title: 'Teknologi som føles arkitektonisk, ikke pålimt.',
@@ -150,6 +169,20 @@ const content = {
           text: 'For de som vil forstå mer, skal detaljer, historikk og forklaringer være tilgjengelige uten å dominere.',
           icon: 'sliders',
         },
+      ],
+    },
+    roomOverview: {
+      eyebrow: 'Romoversikt',
+      title: 'Hele hjemmet samlet i ett rolig bilde.',
+      text: 'Lynell skal gi oversikt uten å gjøre hjemmet teknisk. Rom, komfort, lys, energi og status samles i et visuelt grensesnitt som er lett å forstå – også for de som ikke ønsker å tenke på systemet bak.',
+      nivaStatus: 'NIVA følger med',
+      rooms: [
+        { title: 'Stue', text: '21.5° · Lys 42% · På mål', icon: 'heart' },
+        { title: 'Kjøkken', text: '20.8° · Rolig scene', icon: 'rhythm' },
+        { title: 'Soverom', text: '19.2° · Luft OK', icon: 'check' },
+        { title: 'Bad', text: '22.4° · Komfort balansert', icon: 'spark' },
+        { title: 'Kontor', text: '20.1° · Lavt energipådrag', icon: 'wave' },
+        { title: 'Ute', text: 'Solskjerming aktiv', icon: 'shield' },
       ],
     },
     trust: {
@@ -215,6 +248,14 @@ const content = {
         },
       ],
     },
+    operatingHome: {
+      eyebrow: 'Home in motion',
+      title: 'A home that responds calmly to the rhythm of everyday life.',
+      text: 'Lynell brings lighting, climate, shading, media and energy into one experience. The result is not more technology in daily life, but a home that feels more balanced, more understandable and easier to live in.',
+      sceneLabel: 'Calm evening scene active',
+      dataPoints: ['Comfort', 'Light', 'Shading', 'Energy'],
+      statusItems: ['Light 42%', 'Shading adjusted', 'Comfort balanced'],
+    },
     niva: {
       eyebrow: 'NIVA',
       title: 'NIVA – intelligence that makes the home understandable.',
@@ -279,6 +320,17 @@ const content = {
       quote: '“The living room is warming faster than expected. Solar gain is likely, and the west-facing shading is still open.”',
       tags: ['92% certainty', 'high trust', 'suggestion – not action'],
     },
+    nivaInUse: {
+      eyebrow: 'NIVA in use',
+      title: 'Ask the home, get an understandable answer.',
+      text: 'NIVA should make advanced home control more human. Instead of searching through menus, the user can ask what is happening, why something changed or what should be adjusted.',
+      userLabel: 'User',
+      nivaLabel: 'NIVA',
+      userMessage: '“NIVA, why is the living room warm?”',
+      nivaMessage:
+        '“The west-facing shading is still open, and the room is receiving high solar gain. I recommend lowering the slats before the temperature rises further.”',
+      tags: ['high trust', 'explainable', 'suggestion – not action'],
+    },
     design: {
       eyebrow: 'Design',
       title: 'Technology that feels architectural, not attached.',
@@ -299,6 +351,20 @@ const content = {
           text: 'For those who want to understand more, details, history and explanations should be available without dominating.',
           icon: 'sliders',
         },
+      ],
+    },
+    roomOverview: {
+      eyebrow: 'Room overview',
+      title: 'The whole home gathered in one calm picture.',
+      text: 'Lynell should provide overview without making the home feel technical. Rooms, comfort, light, energy and status are gathered in a visual interface that is easy to understand, even for people who do not want to think about the system behind it.',
+      nivaStatus: 'NIVA is watching',
+      rooms: [
+        { title: 'Living', text: '21.5° · Light 42% · On target', icon: 'heart' },
+        { title: 'Kitchen', text: '20.8° · Calm scene', icon: 'rhythm' },
+        { title: 'Bedroom', text: '19.2° · Air OK', icon: 'check' },
+        { title: 'Bath', text: '22.4° · Comfort balanced', icon: 'spark' },
+        { title: 'Office', text: '20.1° · Low energy draw', icon: 'wave' },
+        { title: 'Outside', text: 'Shading active', icon: 'shield' },
       ],
     },
     trust: {
@@ -332,6 +398,14 @@ const content = {
     nav: Record<string, string>;
     hero: { eyebrow: string; title: string; lead: string; primaryCta: string; secondaryCta: string };
     experience: { eyebrow: string; title: string; text: string; cards: Card[] };
+    operatingHome: {
+      eyebrow: string;
+      title: string;
+      text: string;
+      sceneLabel: string;
+      dataPoints: string[];
+      statusItems: string[];
+    };
     niva: {
       eyebrow: string;
       title: string;
@@ -344,7 +418,24 @@ const content = {
       quote: string;
       tags: string[];
     };
+    nivaInUse: {
+      eyebrow: string;
+      title: string;
+      text: string;
+      userLabel: string;
+      nivaLabel: string;
+      userMessage: string;
+      nivaMessage: string;
+      tags: string[];
+    };
     design: { eyebrow: string; title: string; text: string; cards: Card[] };
+    roomOverview: {
+      eyebrow: string;
+      title: string;
+      text: string;
+      nivaStatus: string;
+      rooms: Card[];
+    };
     trust: { eyebrow: string; title: string; text: string; items: Card[] };
     technicalFoundation: { eyebrow: string; title: string; text: string; cta: string };
     contact: { eyebrow: string; title: string; text: string; cta: string };
@@ -481,6 +572,131 @@ function Icon({ name }: { name?: IconName }) {
   );
 }
 
+function OperatingHomeMockup({
+  sceneLabel,
+  dataPoints,
+  statusItems,
+}: {
+  sceneLabel: string;
+  dataPoints: string[];
+  statusItems: string[];
+}) {
+  return (
+    <div className="homeSceneMockup" aria-label={sceneLabel}>
+      <div className="homeWindow">
+        <span />
+        <span />
+        <span />
+        <span />
+      </div>
+      <div className="roomPlane kitchenPlane" />
+      <div className="roomPlane livingPlane" />
+      <div className="pendantLights">
+        <span />
+        <span />
+        <span />
+      </div>
+      <div className="sofaShape" />
+      <div className="counterShape" />
+      <div className="slatWall">
+        {Array.from({ length: 8 }, (_, index) => (
+          <span key={index} />
+        ))}
+      </div>
+      <div className="sceneOverlay">
+        <p>{sceneLabel}</p>
+        <div className="sceneStatus">
+          {statusItems.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+      </div>
+      <div className="sceneDataPoints">
+        {dataPoints.map((point) => (
+          <span key={point}>{point}</span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function NivaUseMockup({
+  userLabel,
+  nivaLabel,
+  userMessage,
+  nivaMessage,
+  tags,
+}: {
+  userLabel: string;
+  nivaLabel: string;
+  userMessage: string;
+  nivaMessage: string;
+  tags: string[];
+}) {
+  return (
+    <div className="nivaUseMockup">
+      <div className="homeBackdrop">
+        <span />
+        <span />
+        <span />
+      </div>
+      <div className="handShape" />
+      <div className="tabletFrame">
+        <div className="tabletTopBar">
+          <span>Lynell</span>
+          <i />
+        </div>
+        <div className="dialogStack">
+          <div className="dialogBubble userBubble">
+            <small>{userLabel}</small>
+            <p>{userMessage}</p>
+          </div>
+          <div className="dialogBubble nivaBubble">
+            <small>{nivaLabel}</small>
+            <p>{nivaMessage}</p>
+            <div className="confidenceRow">
+              {tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RoomOverviewMockup({ rooms, nivaStatus }: { rooms: Card[]; nivaStatus: string }) {
+  return (
+    <div className="roomOverviewMockup">
+      <div className="overviewTop">
+        <div>
+          <span>Lynell Home</span>
+          <strong>{nivaStatus}</strong>
+        </div>
+        <div className="overviewSignal">
+          <i />
+          <i />
+          <i />
+        </div>
+      </div>
+      <div className="roomGrid">
+        {rooms.map((room) => (
+          <article className="roomTile" key={room.title}>
+            <Icon name={room.icon} />
+            <h3>{room.title}</h3>
+            <p>{room.text}</p>
+          </article>
+        ))}
+      </div>
+      <div className="nivaDock">
+        <Icon name="spark" />
+        <span>{nivaStatus}</span>
+      </div>
+    </div>
+  );
+}
+
 export function App() {
   const [language, setLanguage] = useState<Language>('no');
   const page = content[language];
@@ -558,6 +774,21 @@ export function App() {
         </div>
       </section>
 
+      <section className="scenarioSection sectionBand" id="home-in-motion">
+        <div className="sectionInner scenarioLayout">
+          <div className="scenarioCopy">
+            <p className="sectionLabel">{page.operatingHome.eyebrow}</p>
+            <h2>{page.operatingHome.title}</h2>
+            <p>{page.operatingHome.text}</p>
+          </div>
+          <OperatingHomeMockup
+            sceneLabel={page.operatingHome.sceneLabel}
+            dataPoints={page.operatingHome.dataPoints}
+            statusItems={page.operatingHome.statusItems}
+          />
+        </div>
+      </section>
+
       <section className="niva sectionBand" id="niva">
         <div className="sectionInner nivaInner">
           <div className="nivaHero">
@@ -603,6 +834,23 @@ export function App() {
         </div>
       </section>
 
+      <section className="scenarioSection nivaUseSection sectionBand" id="niva-in-use">
+        <div className="sectionInner scenarioLayout reverse">
+          <NivaUseMockup
+            userLabel={page.nivaInUse.userLabel}
+            nivaLabel={page.nivaInUse.nivaLabel}
+            userMessage={page.nivaInUse.userMessage}
+            nivaMessage={page.nivaInUse.nivaMessage}
+            tags={page.nivaInUse.tags}
+          />
+          <div className="scenarioCopy">
+            <p className="sectionLabel">{page.nivaInUse.eyebrow}</p>
+            <h2>{page.nivaInUse.title}</h2>
+            <p>{page.nivaInUse.text}</p>
+          </div>
+        </div>
+      </section>
+
       <section className="design sectionBand" id="design">
         <div className="sectionInner sectionStack">
           <div className="sectionHeader wide">
@@ -619,6 +867,17 @@ export function App() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="scenarioSection roomOverviewSection sectionBand" id="room-overview">
+        <div className="sectionInner scenarioLayout">
+          <div className="scenarioCopy">
+            <p className="sectionLabel">{page.roomOverview.eyebrow}</p>
+            <h2>{page.roomOverview.title}</h2>
+            <p>{page.roomOverview.text}</p>
+          </div>
+          <RoomOverviewMockup rooms={page.roomOverview.rooms} nivaStatus={page.roomOverview.nivaStatus} />
         </div>
       </section>
 
