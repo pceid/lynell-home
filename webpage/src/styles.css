@@ -3694,3 +3694,283 @@ h4 {
     width: 100%;
   }
 }
+
+/* Scenario layout correction: keep text readable while preserving the image-led direction */
+.scenarioSection .sectionInner {
+  width: min(1380px, calc(100% - 64px));
+}
+
+.scenarioLayout {
+  grid-template-columns: minmax(390px, 0.68fr) minmax(620px, 1fr);
+  gap: clamp(44px, 5vw, 82px);
+}
+
+.scenarioLayout.reverse {
+  grid-template-columns: minmax(620px, 1fr) minmax(420px, 0.68fr);
+}
+
+.scenarioCopy {
+  max-width: 660px;
+  min-width: 0;
+}
+
+.scenarioCopy h2 {
+  max-width: 720px;
+  font-size: clamp(2.35rem, 3.15vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: 0;
+  text-wrap: balance;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.scenarioCopy p:not(.sectionLabel) {
+  max-width: 620px;
+}
+
+.homeSceneMockup,
+.nivaUseMockup {
+  min-height: clamp(500px, 42vw, 680px);
+}
+
+.homeSceneMockup > img {
+  object-position: 56% center;
+}
+
+.nivaUseMockup > img {
+  object-position: 48% center;
+}
+
+.sceneOverlay {
+  right: clamp(24px, 4vw, 54px);
+  bottom: clamp(24px, 4vw, 54px);
+  max-width: min(360px, calc(100% - 48px));
+  padding: clamp(15px, 1.6vw, 22px);
+  border-radius: 16px;
+}
+
+.sceneOverlay p {
+  font-size: 0.78rem;
+}
+
+.sceneStatus {
+  gap: 8px;
+}
+
+.sceneStatus span {
+  padding: 7px 10px;
+  font-size: 0.74rem;
+}
+
+.nivaUseMockup .tabletFrame {
+  right: clamp(26px, 4.2vw, 62px);
+  top: 17%;
+  bottom: auto;
+  width: min(390px, 38%);
+  padding: clamp(16px, 1.5vw, 22px);
+}
+
+.nivaUseMockup .dialogStack {
+  gap: 13px;
+}
+
+.nivaUseMockup .dialogBubble {
+  padding: clamp(14px, 1.3vw, 18px);
+}
+
+.nivaUseMockup .dialogBubble p {
+  font-size: clamp(0.88rem, 0.9vw, 0.98rem);
+  line-height: 1.62;
+}
+
+.roomOverviewSection .scenarioLayout {
+  grid-template-columns: minmax(430px, 0.58fr) minmax(720px, 1.12fr);
+}
+
+.roomOverviewMockup {
+  min-height: clamp(500px, 35vw, 620px);
+}
+
+.roomOverviewMockup > img {
+  object-position: center center;
+}
+
+.roomOverviewMockup .overviewTop {
+  left: 38%;
+  right: 7%;
+  top: 9%;
+}
+
+.roomOverviewMockup .roomGrid {
+  left: 38%;
+  right: 24%;
+  top: 23%;
+  bottom: 15%;
+  gap: clamp(10px, 0.8vw, 13px);
+}
+
+.roomOverviewMockup .roomTile > div:not(.roomVisual) {
+  padding: clamp(11px, 1vw, 16px);
+}
+
+.roomOverviewMockup .roomTile h3 {
+  font-size: clamp(0.88rem, 0.86vw, 1rem);
+}
+
+.roomOverviewMockup .roomTile p {
+  font-size: clamp(0.73rem, 0.72vw, 0.84rem);
+  line-height: 1.45;
+}
+
+.roomOverviewMockup .nivaDock {
+  right: 7%;
+  top: 23%;
+  bottom: 15%;
+  width: 15%;
+  padding: clamp(14px, 1.2vw, 18px);
+}
+
+@media (max-width: 1180px) {
+  .scenarioSection .sectionInner {
+    width: min(1120px, calc(100% - 48px));
+  }
+
+  .scenarioLayout,
+  .scenarioLayout.reverse,
+  .roomOverviewSection .scenarioLayout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .scenarioLayout.reverse .scenarioCopy {
+    order: -1;
+  }
+
+  .scenarioCopy {
+    max-width: 760px;
+  }
+
+  .scenarioCopy h2 {
+    font-size: clamp(2.25rem, 5.3vw, 3.85rem);
+  }
+
+  .homeSceneMockup,
+  .nivaUseMockup {
+    min-height: clamp(500px, 58vw, 680px);
+  }
+
+  .nivaUseMockup .tabletFrame {
+    top: auto;
+    right: clamp(22px, 5vw, 54px);
+    bottom: clamp(22px, 5vw, 54px);
+    width: min(390px, 42%);
+  }
+
+  .roomOverviewMockup {
+    min-height: auto;
+    padding: clamp(280px, 42vw, 430px) 20px 20px;
+  }
+
+  .roomOverviewMockup > img {
+    height: clamp(320px, 48vw, 470px);
+    object-position: center top;
+  }
+
+  .roomOverviewMockup .overviewTop,
+  .roomOverviewMockup .roomGrid,
+  .roomOverviewMockup .nivaDock {
+    position: relative;
+    inset: auto;
+    width: auto;
+  }
+
+  .roomOverviewMockup .overviewTop {
+    margin-bottom: 18px;
+  }
+
+  .roomOverviewMockup .roomGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 720px) {
+  .scenarioSection .sectionInner {
+    width: min(100% - 32px, 680px);
+  }
+
+  .scenarioLayout,
+  .scenarioLayout.reverse,
+  .roomOverviewSection .scenarioLayout {
+    gap: 34px;
+  }
+
+  .scenarioCopy h2 {
+    font-size: clamp(2rem, 8.5vw, 3.05rem);
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  .homeSceneMockup,
+  .nivaUseMockup {
+    min-height: 500px;
+  }
+
+  .nivaUseMockup > img {
+    object-position: 42% center;
+  }
+
+  .nivaUseMockup .tabletFrame {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    width: auto;
+    max-height: 58%;
+    overflow: auto;
+  }
+
+  .sceneOverlay {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    max-width: none;
+  }
+
+  .sceneStatus {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .roomOverviewMockup {
+    padding-top: 250px;
+  }
+
+  .roomOverviewMockup > img {
+    height: 280px;
+    object-position: 47% top;
+  }
+
+  .roomOverviewMockup .roomGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 460px) {
+  .scenarioCopy h2 {
+    font-size: clamp(1.9rem, 10vw, 2.65rem);
+  }
+
+  .homeSceneMockup,
+  .nivaUseMockup {
+    min-height: 460px;
+  }
+
+  .sceneStatus,
+  .roomOverviewMockup .roomGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .nivaUseMockup .dialogBubble p {
+    font-size: 0.84rem;
+  }
+}
