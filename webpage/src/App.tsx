@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import type { ReactElement } from 'react';
+import type { FormEvent, ReactElement } from 'react';
 
 type Language = 'no' | 'en';
+
+const CONTACT_EMAIL = 'pceid23@gmail.com';
 
 type Card = {
   title: string;
@@ -70,9 +72,9 @@ const content = {
       eyebrow: 'Hjemmet i drift',
       title: 'Et hjem som responderer rolig på rytmen i hverdagen.',
       text: 'Lynell samler lys, klima, solskjerming, media og energi i én opplevelse. Resultatet er ikke mer teknologi i hverdagen – men et hjem som føles mer balansert, mer forståelig og enklere å leve i.',
-      sceneLabel: 'Rolig kveldsscene aktiv',
+      sceneLabel: 'Rolig kveldsscene',
       dataPoints: ['Komfort', 'Lys', 'Solskjerming', 'Energi'],
-      statusItems: ['Komfort balansert', 'Rolig kveldsscene', 'Lys tilpasset', 'Solskjerming aktiv'],
+      statusItems: ['Komfort på mål', 'Lys 42%', 'Solskjerming justert', 'Energi lavt pådrag'],
     },
     niva: {
       eyebrow: 'NIVA',
@@ -205,8 +207,14 @@ const content = {
     contact: {
       eyebrow: 'Kontakt',
       title: 'Nysgjerrig på Lynell?',
-      text: 'Lynell er under utvikling for hjem, byggherrer og tekniske miljøer som ønsker et roligere, mer helhetlig og mer intelligent grensesnitt mot hjemmets viktigste funksjoner.',
-      cta: 'Kontakt / Be om demo',
+      text: 'Send en kort forespørsel, så tar vi kontakt når neste demo- eller pilotfase er klar.',
+      cta: 'Send forespørsel',
+      nameLabel: 'Navn',
+      emailLabel: 'E-post',
+      messageLabel: 'Melding',
+      namePlaceholder: 'Ditt navn',
+      emailPlaceholder: 'din@epost.no',
+      messageDefault: 'Hei, jeg ønsker mer informasjon om Lynell og mulighet for demo.',
     },
   },
   en: {
@@ -252,9 +260,9 @@ const content = {
       eyebrow: 'Home in motion',
       title: 'A home that responds calmly to the rhythm of everyday life.',
       text: 'Lynell brings lighting, climate, shading, media and energy into one experience. The result is not more technology in daily life, but a home that feels more balanced, more understandable and easier to live in.',
-      sceneLabel: 'Calm evening scene active',
+      sceneLabel: 'Calm evening scene',
       dataPoints: ['Comfort', 'Light', 'Shading', 'Energy'],
-      statusItems: ['Comfort balanced', 'Calm evening scene', 'Light adapted', 'Shading active'],
+      statusItems: ['Comfort on target', 'Light 42%', 'Shading adjusted', 'Low energy load'],
     },
     niva: {
       eyebrow: 'NIVA',
@@ -387,8 +395,14 @@ const content = {
     contact: {
       eyebrow: 'Contact',
       title: 'Curious about Lynell?',
-      text: 'Lynell is under development for homes, developers and technical environments that want a calmer, more complete and more intelligent interface to the home’s most important functions.',
-      cta: 'Contact / Request demo',
+      text: 'Send a short request, and we will get in touch when the next demo or pilot phase is ready.',
+      cta: 'Send request',
+      nameLabel: 'Name',
+      emailLabel: 'Email',
+      messageLabel: 'Message',
+      namePlaceholder: 'Your name',
+      emailPlaceholder: 'you@example.com',
+      messageDefault: 'Hi, I would like more information about Lynell and the possibility of a demo.',
     },
   },
 } satisfies Record<
@@ -438,7 +452,18 @@ const content = {
     };
     trust: { eyebrow: string; title: string; text: string; items: Card[] };
     technicalFoundation: { eyebrow: string; title: string; text: string; cta: string };
-    contact: { eyebrow: string; title: string; text: string; cta: string };
+    contact: {
+      eyebrow: string;
+      title: string;
+      text: string;
+      cta: string;
+      nameLabel: string;
+      emailLabel: string;
+      messageLabel: string;
+      namePlaceholder: string;
+      emailPlaceholder: string;
+      messageDefault: string;
+    };
   }
 >;
 
@@ -581,45 +606,7 @@ function OperatingHomeMockup({
 }) {
   return (
     <div className="homeSceneMockup" aria-label={sceneLabel}>
-      <div className="architectureFrame">
-        <div className="nightSky">
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="windowWall">
-          {Array.from({ length: 9 }, (_, index) => (
-            <span key={index} />
-          ))}
-        </div>
-        <div className="ceilingLine" />
-        <div className="stoneWall" />
-        <div className="woodWall" />
-        <div className="floorPlane" />
-      </div>
-      <div className="fireplaceGlow" />
-      <div className="warmLightPool lightPoolOne" />
-      <div className="warmLightPool lightPoolTwo" />
-      <div className="floorLamp">
-        <span />
-        <i />
-      </div>
-      <div className="diningPendant" />
-      <div className="loungeSofa" />
-      <div className="lowTable" />
-      <div className="kitchenIsland" />
-      <div className="diningSet">
-        <span />
-        <span />
-        <span />
-      </div>
-      <div className="textileRug" />
-      <div className="sofaShape" />
-      <div className="slatWall">
-        {Array.from({ length: 11 }, (_, index) => (
-          <span key={index} />
-        ))}
-      </div>
+      <img src="/images/lynell-home-in-motion.png" alt="" loading="lazy" />
       <div className="sceneOverlay">
         <p>{sceneLabel}</p>
         <div className="sceneStatus">
@@ -647,22 +634,7 @@ function NivaUseMockup({
 }) {
   return (
     <div className="nivaUseMockup">
-      <div className="homeBackdrop">
-        <span />
-        <span />
-        <span />
-      </div>
-      <div className="ambientWindow" />
-      <div className="nivaEveningLight" />
-      <div className="personScene">
-        <div className="personHead" />
-        <div className="personBody" />
-        <div className="personArm" />
-        <div className="lapTablet" />
-      </div>
-      <div className="contextSofa" />
-      <div className="contextLamp" />
-      <div className="sideTable" />
+      <img src="/images/lynell-niva-in-use.png" alt="" loading="lazy" />
       <div className="tabletFrame">
         <div className="dialogStack">
           <div className="dialogBubble userBubble">
@@ -687,6 +659,7 @@ function NivaUseMockup({
 function RoomOverviewMockup({ rooms, nivaStatus }: { rooms: Card[]; nivaStatus: string }) {
   return (
     <div className="roomOverviewMockup">
+      <img src="/images/lynell-room-overview.png" alt="" loading="lazy" />
       <div className="overviewTop">
         <div>
           <span>Lynell Home</span>
@@ -718,6 +691,60 @@ function RoomOverviewMockup({ rooms, nivaStatus }: { rooms: Card[]; nivaStatus: 
         <span>{nivaStatus}</span>
       </div>
     </div>
+  );
+}
+
+function ContactForm({ contact }: { contact: (typeof content)[Language]['contact'] }) {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState(contact.messageDefault);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const body = [
+      `Navn: ${name}`,
+      `E-post: ${email}`,
+      '',
+      message,
+    ].join('\n');
+
+    const href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Demoforespørsel – Lynell')}&body=${encodeURIComponent(body)}`;
+    window.location.href = href;
+  };
+
+  return (
+    <form className="contactForm" onSubmit={handleSubmit}>
+      <label>
+        <span>{contact.nameLabel}</span>
+        <input
+          type="text"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+          placeholder={contact.namePlaceholder}
+          autoComplete="name"
+          required
+        />
+      </label>
+      <label>
+        <span>{contact.emailLabel}</span>
+        <input
+          type="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          placeholder={contact.emailPlaceholder}
+          autoComplete="email"
+          required
+        />
+      </label>
+      <label>
+        <span>{contact.messageLabel}</span>
+        <textarea value={message} onChange={(event) => setMessage(event.target.value)} rows={5} required />
+      </label>
+      <button className="primaryButton" type="submit">
+        {contact.cta}
+      </button>
+    </form>
   );
 }
 
@@ -938,12 +965,12 @@ export function App() {
 
       <section className="contact sectionBand" id="contact">
         <div className="sectionInner contactInner">
-          <p className="sectionLabel">{page.contact.eyebrow}</p>
-          <h2>{page.contact.title}</h2>
-          <p>{page.contact.text}</p>
-          <a className="primaryButton" href="mailto:post@lynell.no?subject=Demo%20av%20Lynell">
-            {page.contact.cta}
-          </a>
+          <div className="contactCopy">
+            <p className="sectionLabel">{page.contact.eyebrow}</p>
+            <h2>{page.contact.title}</h2>
+            <p>{page.contact.text}</p>
+          </div>
+          <ContactForm contact={page.contact} />
         </div>
       </section>
     </main>
